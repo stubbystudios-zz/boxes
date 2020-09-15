@@ -1,0 +1,101 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Roboto:wght@400;700&display=swap");
+
+body {
+  background: #f0f8ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+header,
+nav,
+.container {
+  margin: 0 auto;
+  width: 900px;
+}
+
+header {
+  margin-top: 64px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+}
+
+header,
+nav {
+  margin-bottom: 32px;
+}
+
+.btn {
+  background: #1896f1;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 45px;
+  margin-right: 8px;
+  padding: 8px;
+  width: 75px;
+}
+
+.btn:hover {
+  background: #74dcfc;
+}
+
+.btn:active {
+  background: #4fb5fd;
+}
+
+.btn:disabled {
+  background: #dcdcdc;
+  cursor: default;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  margin-bottom: 16px;
+  width: 32%;
+}
+
+.black-box {
+  background: #000;
+}
+
+.overlay {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.12),
+    rgba(0, 0, 0, 0.12) 10px,
+    rgba(0, 0, 0, 0.1) 10px,
+    rgba(0, 0, 0, 0.1) 20px
+  );
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.error {
+  background: #ff6347;
+  color: #fff;
+  font-weight: 700;
+  left: 0;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
