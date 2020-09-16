@@ -45,8 +45,10 @@ nav {
   background: #74dcfc;
 }
 
-.btn:active {
+.btn:active,
+.btn:focus {
   background: #4fb5fd;
+  outline: none;
 }
 
 .btn:disabled {
