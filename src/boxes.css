@@ -89,13 +89,52 @@ nav {
 }
 
 .error {
+  align-items: center;
   background: #ff6347;
   color: #fff;
+  display: flex;
   font-weight: 700;
+  justify-content: center;
   left: 0;
   padding: 8px;
   position: absolute;
-  text-align: center;
   top: 0;
   width: 100%;
+}
+
+.close {
+  align-items: center;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  margin-left: 16px;
+  margin-right: 16px;
+  opacity: 0.7;
+  position: relative;
+  width: 24px;
+}
+
+.close:after,
+.close:before {
+  background: #ff6347;
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:active {
+  opacity: 0.7;
 }
