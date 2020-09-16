@@ -12,38 +12,52 @@ document.getElementById('box_4').classList.add('black-box');
 
 document.querySelector('.up-btn').addEventListener('click', function () {
   blackBoxFunction();
+  moveUp();
+});
 
+document.querySelector('.down-btn').addEventListener('click', function () {
+  blackBoxFunction();
+  moveDown();
+});
+
+document.querySelector('.left-btn').addEventListener('click', function () {
+  blackBoxFunction();
+  moveLeft();
+});
+
+document.querySelector('.right-btn').addEventListener('click', function () {
+  blackBoxFunction();
+  moveRight();
+});
+
+function moveUp() {
   // Catch if the box moves above the top row 
   if (blackBoxIdNum > 2) {
     blackBoxActive.classList.remove('black-box');
 
-    // Mark the active box and move it up one row
+    // Find the active box and move it up one row
     newBlackBox = blackBoxIdNum - 3;
 
     document.getElementById('box_' + newBlackBox).classList.add('black-box');
   } else {
     error();
   }
-});
+};
 
-document.querySelector('.down-btn').addEventListener('click', function () {
-  blackBoxFunction();
-
+function moveDown() {
   // Catch if the box moves below the bottom row 
-  if (blackBoxIdNum < boxCount - 2) {
+  if (blackBoxIdNum < boxCount - 3) {
     blackBoxActive.classList.remove('black-box');
     newBlackBox = blackBoxIdNum + 3;
 
-    // Mark the active box and move it down one row
+    // Find the active box and move it down one row
     document.getElementById('box_' + newBlackBox).classList.add('black-box');
   } else {
     error();
   }
-});
+};
 
-document.querySelector('.left-btn').addEventListener('click', function () {
-  blackBoxFunction();
-
+function moveLeft() {
   // Catch if the box moves left of the left column 
   if (
     blackBoxIdNum !== 0
@@ -53,16 +67,14 @@ document.querySelector('.left-btn').addEventListener('click', function () {
     blackBoxActive.classList.remove('black-box');
     newBlackBox = blackBoxIdNum - 1;
 
-    // Mark the active box and move it left one column
+    // Find the active box and move it left one column
     document.getElementById('box_' + newBlackBox).classList.add('black-box');
   } else {
     error();
   }
-});
+};
 
-document.querySelector('.right-btn').addEventListener('click', function () {
-  blackBoxFunction();
-
+function moveRight() {
   // Catch if the box moves right of the right column
   if (
     blackBoxIdNum !== 2
@@ -71,14 +83,14 @@ document.querySelector('.right-btn').addEventListener('click', function () {
   ) {
     blackBoxActive.classList.remove('black-box');
 
-    // Mark the active box and move it left one column
+    // Find the active box and move it left one column
     newBlackBox = blackBoxIdNum + 1;
 
     document.getElementById('box_' + newBlackBox).classList.add('black-box');
   } else {
     error();
   }
-});
+};
 
 function blackBoxFunction() {
   blackBoxActive = document.querySelector('.black-box');
@@ -92,9 +104,9 @@ function error() {
 
   document.querySelector('.overlay').addEventListener('click', closeOverlay);
   document.querySelector('.close').addEventListener('click', closeOverlay);
-}
+};
 
 function closeOverlay() {
   document.querySelector('.error').remove();
   document.querySelector('.overlay').remove();
-}
+};
